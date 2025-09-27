@@ -147,11 +147,16 @@ public class MusicOrganizer
      */
     public void listMatching(String searchString)
     {
+        boolean match = false;
         for(String filename : files){
             if (filename.contains(searchString)){
                 // A match.
                 System.out.println(filename);
+                match = true;
             }
+        }
+        if(!match){
+            System.out.println("No matching files: " + searchString);
         }
     }
 }
