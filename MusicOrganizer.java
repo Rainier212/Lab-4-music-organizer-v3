@@ -159,4 +159,19 @@ public class MusicOrganizer
             System.out.println("No matching files: " + searchString);
         }
     }
+    
+    public void playTracksByArtist(String artist)
+    {
+        boolean match = false;
+        for(String filename : files){
+            if (filename.contains(artist)){
+                // A match.
+                player.playSample(filename);
+                match = true;
+            }
+        }
+        if(!match){
+            System.out.println("No tracks were found for the artist: " + artist);
+        }
+    }
 }
